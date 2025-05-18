@@ -1,0 +1,41 @@
+{
+  "veiculos": [
+    {
+      "id": "1",
+      "modelo": "Pulse",
+      "marca": "FIAT",
+      "tipo": "SUV",
+      "placa": "JAH0F43",
+      "nomeProprietario": "José Alves",
+      "contatoProprietario": "48 99955-0154"
+    },
+    {
+      "id": "4d06",
+      "modelo": "DALE",
+      "marca": "Renault",
+      "tipo": "Hatch",
+      "placa": "ADSDFKD",
+      "cor": "Preto",
+      "nomeProprietario": "Duda",
+      "contatoProprietario": "4898s545498"
+    },
+    {
+      "id": "a2f0",
+      "modelo": "Corsa",
+      "marca": "Renault",
+      "tipo": "Sedan",
+      "placa": "RJH9D9D",
+      "cor": "Preto",
+      "nomeProprietario": "Dale",
+      "contatoProprietario": "Dale"
+    }
+  ],
+  "vagas": [
+    {
+      "id": "1",
+      "codigo": "1",
+      "coberta": false,
+      "ativa": true
+    }
+  ]
+}

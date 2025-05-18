@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Cadastrando veículo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="this.veiculoForm" (ngSubmit)="onSubmit()">
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">Placa</ion-label>
+                <ion-input formControlName="placa" maxlength="7"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Modelo</ion-label>
+                <ion-input formControlName="modelo"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-select formControlName="tipo" label="Tipo" multiple="false">
+                    @for(tipo of this.tipos; track $index) {
+                        <ion-select-option [value]="tipo">
+                            {{ tipo }}
+                        </ion-select-option>
+                    }
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-select formControlName="marca" label="Marcas" multiple="false">
+                    @for(marca of this.marcas; track $index) {
+                        <ion-select-option [value]="marca">
+                            {{ marca }}
+                        </ion-select-option>
+                    }
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Cor</ion-label>
+                <ion-input formControlName="cor"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Nome do Proprietário</ion-label>
+                <ion-input formControlName="nomeProprietario"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating">Contato</ion-label>
+                <ion-input formControlName="contatoProprietario"></ion-input>
+            </ion-item>
+
+            <ion-button expand="full" type="submit" [disabled]="!veiculoForm.valid">Salvar</ion-button>
+        </ion-list>
+
+    </form>
+</ion-content>
