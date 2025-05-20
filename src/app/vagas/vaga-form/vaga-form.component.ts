@@ -37,7 +37,10 @@ export class VagaFormComponent implements OnInit {
 
     vagaForm: FormGroup = new FormGroup({
         codigo: new FormControl('', Validators.required),
-        coberta: new FormControl('', Validators.required),
+        coberta: new FormControl(false, Validators.required),
+        comporataCamionete: new FormControl(true, Validators.required),
+        isAtiva: new FormControl(true, Validators.required),
+        reservada: new FormControl(false, Validators.required)
     });
 
     onSubmit() {

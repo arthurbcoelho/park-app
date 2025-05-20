@@ -13,5 +13,6 @@ export type VagaOcupada = {
     horaFim?: Date,
     precoHora: number,
     precoTotal: number,
-    finalizada: boolean
+    finalizada: boolean,
+    precoFixo: number
 }

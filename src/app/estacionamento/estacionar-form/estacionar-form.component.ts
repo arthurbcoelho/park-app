@@ -7,6 +7,7 @@ import { Veiculo } from 'src/app/veiculos/models/veiculo.type';
 import { VeiculosService } from 'src/app/veiculos/services/veiculos.service';
 import { VagasOcupadasService } from '../services/vagas-ocupadas.service';
 import { Router } from '@angular/router';
+import { PrecoVagaValidator } from 'src/app/commons/validators/preco-vaga.validator';
 
 @Component({
     selector: 'app-estacionar-form',
@@ -50,7 +51,10 @@ export class EstacionarFormComponent implements OnInit {
         veiculo: new FormControl('', Validators.required),
         vaga: new FormControl('', Validators.required),
         horaInicio: new FormControl('', Validators.required),
-        precoHora: new FormControl('', Validators.required)
+        precoHora: new FormControl(''),
+        precoFixo: new FormControl(''),
+    }, {
+        validators: PrecoVagaValidator.peloMenosUmPreco()
     });
 
     onSubmit() {

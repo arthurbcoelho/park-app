@@ -38,7 +38,11 @@ export class SaidaModalComponent implements OnInit {
             console.log('caiu aqui 1');
             this.vagasOcupadasService.update(vagaOcupada)
                 .subscribe(resp => { 
-                    this.vagasOcupadasService.totalFaturado = this.vagasOcupadasService.totalFaturado + this.calculaTotal(vagaOcupada);
+                    if (vagaOcupada.precoFixo > 0) {
+                        this.vagasOcupadasService.totalFaturado = this.vagasOcupadasService.totalFaturado + vagaOcupada.precoFixo;    
+                    } else {
+                        this.vagasOcupadasService.totalFaturado = this.vagasOcupadasService.totalFaturado + this.calculaTotal(vagaOcupada);
+                    }
                     this.vagasService.calculaPorcentagemVagas();
                     alert('Vaga liberada com sucesso!');
                 });
@@ -51,6 +55,9 @@ export class SaidaModalComponent implements OnInit {
 
 
     calculaTotal(vagaOcupada: VagaOcupada) {
+        if (vagaOcupada.precoFixo > 0) {
+            return vagaOcupada.precoFixo;
+        } 
         return this.vagasOcupadasService.calcularHorasInteiras(vagaOcupada) * vagaOcupada.precoHora;
     }
 }
