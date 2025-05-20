@@ -57,6 +57,32 @@
       "precoHora": 10,
       "horaFim": "2025-05-20T13:02:00.314Z",
       "finalizada": true
+    },
+    {
+      "id": "c23d",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "e4e7",
+        "codigo": "85",
+        "coberta": false
+      },
+      "horaInicio": "2025-05-20T10:30:00",
+      "precoHora": 10
     }
   ]
 }

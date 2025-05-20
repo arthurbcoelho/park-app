@@ -12,7 +12,8 @@
             <ion-item (click)="selecionar(vagaOcupada)">
                 <ion-label>
                     Vaga: {{ vagaOcupada.vaga.codigo }}<br>
-                    Veículo: {{ vagaOcupada.veiculo.placa }}
+                    Veículo: {{ vagaOcupada.veiculo.placa }} <br>
+                    Hora Entrada: {{ vagaOcupada.horaInicio | date:'dd/MM HH:mm' }}
                 </ion-label>
                 <ion-button fill="clear" color="danger" slot="end" (click)="this.finalizarVaga(vagaOcupada)">
                     <ion-icon name="close"></ion-icon>

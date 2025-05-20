@@ -10,4 +10,15 @@
             <ion-title size="large">{{this.pageTitle}}</ion-title>
         </ion-toolbar>
     </ion-header>
+
+    <ion-list>
+        <ion-list-header>
+            Vagas Ocupadas
+        </ion-list-header>
+        @for(vagaOcupada of this.vagasOcupadas; track $index) {
+            <ion-item>
+                <h2>{{vagaOcupada.vaga.codigo}} - {{vagaOcupada.veiculo.placa}}</h2>
+            </ion-item>
+        }
+    </ion-list>
 </ion-content>

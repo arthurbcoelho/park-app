@@ -3,13 +3,15 @@ import { IonicModule, ModalController } from '@ionic/angular';
 import { VagaOcupada } from 'src/app/commons/models/vaga-ocupacao.type';
 import { VagasOcupadasService } from '../services/vagas-ocupadas.service';
 import { Vaga } from 'src/app/vagas/models/vaga.type';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-saida-modal',
     templateUrl: './saida-modal.component.html',
     styleUrls: ['./saida-modal.component.scss'],
     imports: [
-        IonicModule
+        IonicModule,
+        CommonModule
     ]
 })
 export class SaidaModalComponent implements OnInit {
