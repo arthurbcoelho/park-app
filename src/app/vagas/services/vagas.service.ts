@@ -14,7 +14,7 @@ export class VagasService {
     constructor(private readonly httpClient: HttpClient, 
         private readonly vagasOcupadasService: VagasOcupadasService) {}
 
-    getById(vagaId: number) {
+    getById(vagaId: string) {
         return this.httpClient.get<Vaga>(`${this.API_URL}/${vagaId}`);
     }
 
@@ -26,7 +26,8 @@ export class VagasService {
         return this.httpClient.post<Vaga>(this.API_URL, vaga);
     }
 
-    remove(vagaId: number) {
+    remove(vagaId: string) {
+        console.log('caiu aqui!!');
         return this.httpClient.delete(`${this.API_URL}/${vagaId}`);
     }
 
@@ -37,7 +38,7 @@ export class VagasService {
         console.log(vagasOcupadas);
 
         const vagasLivres = vagas.filter(vaga =>
-            !vagasOcupadas.some(ocupada => ocupada.vagaId == vaga.id)
+            !vagasOcupadas.some(ocupada => !!ocupada.finalizada && ocupada.vaga.id == vaga.id)
         );
 
         return vagasLivres;

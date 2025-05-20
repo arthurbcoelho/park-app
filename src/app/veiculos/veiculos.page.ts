@@ -15,7 +15,7 @@ export class VeiculosPage implements ViewWillEnter {
 
     constructor(private readonly veiculosService: VeiculosService) { }
 
-    deleteVeiculo(veiculoId: number) {
+    deleteVeiculo(veiculoId: string) {
         this.veiculosService.remove(veiculoId).subscribe({
             next: (resp) => {
                 alert('Veículo removido com sucesso!');

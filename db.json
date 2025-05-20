@@ -1,7 +1,7 @@
 {
   "veiculos": [
     {
-      "id": "9812",
+      "id": "0843",
       "modelo": "Dale",
       "marca": {
         "id": 7,
@@ -19,23 +19,44 @@
   ],
   "vagas": [
     {
-      "id": "4e06",
-      "codigo": "74",
-      "coberta": true
+      "id": "e4e7",
+      "codigo": "85",
+      "coberta": false
     },
     {
-      "id": "123",
+      "id": "5c21",
       "codigo": "71",
       "coberta": true
     }
   ],
   "vagasOcupadas": [
     {
-      "id": "6729",
-      "veiculoId": "9812",
-      "vagaId": "4e06",
-      "horaInicio": "2025-05-20T21:15:00",
-      "precoHora": 8
+      "id": "8bbe",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "e4e7",
+        "codigo": "85",
+        "coberta": false
+      },
+      "horaInicio": "2025-05-20T09:45:00",
+      "precoHora": 10,
+      "horaFim": "2025-05-20T13:02:00.314Z",
+      "finalizada": true
     }
   ]
 }

@@ -15,7 +15,7 @@ export class VagasPage implements ViewWillEnter {
 
     constructor(private readonly vagasService: VagasService) { }
     
-    deleteVaga(vagaId: number) {
+    deleteVaga(vagaId: string) {
         this.vagasService.remove(vagaId).subscribe({
             next: (resp) => {
                 alert('Vaga removida com sucesso!');

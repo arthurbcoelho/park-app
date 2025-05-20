@@ -26,13 +26,14 @@ export class SaidaModalComponent implements OnInit {
         this.modalController.dismiss(vaga);
     }
 
-    excluirVaga(vaga: VagaOcupada) {
-        console.log('caiu aqui');
-        console.log(vaga);
-        if (vaga.id) {
+    finalizarVaga(vagaOcupada: VagaOcupada) {
+        vagaOcupada.horaFim = new Date();
+        vagaOcupada.finalizada = true;
+
+        if (vagaOcupada.id) {
             console.log('caiu aqui 1');
-            this.vagasOcupadasService.delete(vaga.id)
-            .subscribe(resp => alert('Vaga ocupada excluída com sucesso!'));
+            this.vagasOcupadasService.update(vagaOcupada)
+                .subscribe(resp => alert('Vaga ocupada excluída com sucesso!'));
         } else {
             console.error('Vaga id é undefined');
         }

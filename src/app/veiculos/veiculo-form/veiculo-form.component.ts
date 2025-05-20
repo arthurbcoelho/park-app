@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { VeiculosService } from '../services/veiculos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MARCAS_VEICULO_LIST } from '../models/marca-veiculo.interface';
 import { TIPOS_VEICULO_LIST } from '../models/tipo-veiculo.interface';
 
@@ -18,10 +18,11 @@ import { TIPOS_VEICULO_LIST } from '../models/tipo-veiculo.interface';
 export class VeiculoFormComponent implements OnInit {
     marcas = MARCAS_VEICULO_LIST;
     tipos = TIPOS_VEICULO_LIST;
-    veiculoId!: number;
+    veiculoId!: string;
     
     constructor(private readonly veiculosService: VeiculosService,
         private readonly activatedRoute: ActivatedRoute,
+        private readonly router: Router
     ) { 
         this.veiculoId = this.activatedRoute.snapshot.params['id'];
         
@@ -61,6 +62,20 @@ export class VeiculoFormComponent implements OnInit {
         nomeProprietario: new FormControl('', Validators.required),
         contatoProprietario: new FormControl('', Validators.required)
     });
+
+    remove() {
+        this.veiculosService.remove(this.veiculoId).subscribe({
+            next: (resp) => {
+                alert('veículo removido com sucesso');
+                this.veiculoForm.reset();
+                this.router.navigate(['/']);
+            },
+            error: (error) => {
+                alert('erro ao remover veículo');
+                console.error(error);
+            }
+        })
+    }
 
     ngOnInit() { }
 

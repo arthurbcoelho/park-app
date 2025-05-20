@@ -20,9 +20,9 @@
             <ion-item>
                 <ion-select formControlName="tipo" label="Tipo" multiple="false">
                     @for(tipo of this.tipos; track $index) {
-                        <ion-select-option [value]="tipo">
-                            {{ tipo.nome }}
-                        </ion-select-option>
+                    <ion-select-option [value]="tipo">
+                        {{ tipo.nome }}
+                    </ion-select-option>
                     }
                 </ion-select>
             </ion-item>
@@ -30,9 +30,9 @@
             <ion-item>
                 <ion-select formControlName="marca" label="Marcas" multiple="false">
                     @for(marca of this.marcas; track $index) {
-                        <ion-select-option [value]="marca">
-                            {{ marca.nome }}
-                        </ion-select-option>
+                    <ion-select-option [value]="marca">
+                        {{ marca.nome }}
+                    </ion-select-option>
                     }
                 </ion-select>
             </ion-item>
@@ -53,6 +53,10 @@
             </ion-item>
 
             <ion-button expand="full" type="submit" [disabled]="!veiculoForm.valid">Salvar</ion-button>
+
+            @if(!!this.veiculoId) {
+                <ion-button expand="full" color="danger" (click)="this.remove()">Excluir</ion-button>
+            }
         </ion-list>
 
     </form>

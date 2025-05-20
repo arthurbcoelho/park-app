@@ -23,5 +23,8 @@
             </ion-item>
 
             <ion-button expand="full" type="submit" [disabled]="!vagaForm.valid">Salvar</ion-button>
+            @if (!!this.vagaId){
+                <ion-button expand="full" (click)="this.remove()" color="danger">Excluir</ion-button>
+            }
         </ion-list>
     </form>

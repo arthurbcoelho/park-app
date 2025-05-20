@@ -11,7 +11,7 @@ export class VeiculosService {
 
     constructor(private readonly httpClient: HttpClient) {}
 
-    getById(veiculoId: number) {
+    getById(veiculoId: string) {
         return this.httpClient.get<Veiculo>(`${this.API_URL}/${veiculoId}`);
     }
 
@@ -23,7 +23,7 @@ export class VeiculosService {
         return this.httpClient.post<Veiculo>(this.API_URL, veiculo);
     }
 
-    remove(veiculoId: number) {
+    remove(veiculoId: string) {
         return this.httpClient.delete(`${this.API_URL}/${veiculoId}`);
     }
 }

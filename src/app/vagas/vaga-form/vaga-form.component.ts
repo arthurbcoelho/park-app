@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VagasService } from '../services/vagas.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
@@ -14,11 +14,12 @@ import { IonicModule } from '@ionic/angular';
     ],
 })
 export class VagaFormComponent implements OnInit {
-    vagaId!: number;
+    vagaId!: string;
 
     constructor(private readonly vagasService: VagasService,
-        private readonly activatedRoute: ActivatedRoute
-    ) { 
+        private readonly activatedRoute: ActivatedRoute,
+        private readonly router: Router
+    ) {
         this.vagaId = this.activatedRoute.snapshot.params['id'];
 
         if (this.vagaId) {
@@ -52,5 +53,19 @@ export class VagaFormComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    remove() {
+        this.vagasService.remove(this.vagaId)
+            .subscribe({
+                next: (resp) => {
+                    alert('Vaga removida com sucesso!');
+                    this.router.navigate(['/']);
+                },
+                error: (error) => {
+                    alert('Erro ao remover a vaga');
+                    console.error(error);
+                }
+            });
+    }
+
+    ngOnInit() { }
 }

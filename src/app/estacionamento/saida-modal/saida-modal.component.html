@@ -8,13 +8,13 @@
 </ion-header>
 <ion-content>
     <ion-list>
-        @for(vaga of this.vagasOcupadas; track $index) {
-            <ion-item (click)="selecionar(vaga)">
+        @for(vagaOcupada of this.vagasOcupadas; track $index) {
+            <ion-item (click)="selecionar(vagaOcupada)">
                 <ion-label>
-                    Vaga: {{ vaga.id }}<br>
-                    Veículo: {{ vaga.veiculoId }}
+                    Vaga: {{ vagaOcupada.vaga.codigo }}<br>
+                    Veículo: {{ vagaOcupada.veiculo.placa }}
                 </ion-label>
-                <ion-button fill="clear" color="danger" slot="end" (click)="excluirVaga(vaga)">
+                <ion-button fill="clear" color="danger" slot="end" (click)="this.finalizarVaga(vagaOcupada)">
                     <ion-icon name="close"></ion-icon>
                 </ion-button>
             </ion-item>
