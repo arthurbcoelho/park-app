@@ -299,6 +299,64 @@
       "precoFixo": 8,
       "horaFim": "2025-05-20T17:12:25.592Z",
       "finalizada": true
+    },
+    {
+      "id": "72a1",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "e4e7",
+        "codigo": "85",
+        "coberta": false
+      },
+      "horaInicio": "2025-05-20T19:15:00",
+      "precoHora": 10,
+      "precoFixo": "",
+      "horaFim": "2025-05-20T22:17:07.529Z",
+      "finalizada": true
+    },
+    {
+      "id": "d04a",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "e4e7",
+        "codigo": "85",
+        "coberta": false
+      },
+      "horaInicio": "2025-05-20T19:30:00",
+      "precoHora": 7,
+      "precoFixo": "",
+      "horaFim": "2025-05-20T22:25:58.869Z",
+      "finalizada": true
     }
   ]
 }

@@ -31,6 +31,12 @@
             </ion-item>
 
         }
+
+        @if(!!this.veiculos) {
+            <div id="container">
+                <strong>Nenhum veículo cadastrado</strong>
+            </div>
+        }
     </ion-list>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">

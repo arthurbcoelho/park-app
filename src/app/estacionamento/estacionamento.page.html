@@ -20,5 +20,11 @@
                 <h2>{{vagaOcupada.vaga.codigo}} - {{vagaOcupada.veiculo.placa}}</h2>
             </ion-item>
         }
+
     </ion-list>
+    @if(!!this.vagasOcupadas) {
+        <div id="container">
+            <strong>Nenhuma vaga ocupada</strong>
+        </div>
+    }
 </ion-content>
