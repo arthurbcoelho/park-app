@@ -21,7 +21,7 @@
             <ion-item>
                 <ion-text>
                     <h2>{{ veiculo.placa }}</h2>
-                    <h3>{{ veiculo.marca }} - {{ veiculo.modelo }}</h3>
+                    <h3>{{ veiculo.marca.nome }} - {{ veiculo.modelo }}</h3>
 
                 </ion-text>
                 <ion-button size="small" [routerLink]="['edit', veiculo.id]" slot="end">

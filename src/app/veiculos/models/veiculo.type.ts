@@ -1,5 +1,5 @@
-import { MarcaVeiculo } from "../enum/marca-veiculo.enum"
-import { TipoVeiculo } from "../enum/tipo-veiculo.enum"
+import { MarcaVeiculo } from "./marca-veiculo.interface"
+import { TipoVeiculo } from "./tipo-veiculo.interface"
 
 export type Veiculo = {
     id?: number,

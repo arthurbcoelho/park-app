@@ -13,5 +13,26 @@
         </ion-toolbar>
     </ion-header>
 
-    <app-explore-container name="home page"></app-explore-container>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <ion-button size="large" expand="block" [routerLink]="['/estacionamento/new']">
+                    <ion-icon name="car" slot="start"></ion-icon>
+                    Estacionar
+                </ion-button>
+            </ion-col>
+            <ion-col size="6">
+                <ion-button size="large" expand="block" color="danger" (click)="abrirSaidaModal()">
+                    <ion-icon name="car" slot="start"></ion-icon>
+                    Saída
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-title>Total vagas ocupadas</ion-title>
+            <circle-progress [percent]="this.vagasOcupadasPercentage" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+                [animationDuration]="300" ></circle-progress>
+        </ion-row>
+    </ion-grid>
 </ion-content>

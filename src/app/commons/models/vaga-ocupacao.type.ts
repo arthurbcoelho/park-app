@@ -1,11 +1,10 @@
-import { Veiculo } from "src/app/veiculos/models/veiculo.type"
-import { Vaga } from "src/app/vagas/models/vaga.type"
-
-export type VagaOcupacao = {
-    id?: number,
-    vaga: Vaga,
-    veiculo: Veiculo,
-    inicioOcupacao: Date,
+export type VagaOcupada = {
+    id?: string,
+    vagaId: string,
+    vagaCodigo: string
+    veiculoId: string,
+    placaVeiculo: string,
+    horaInicio: Date,
     finalOcupacao?: Date,
     precoHora: number,
     precoTotal: number

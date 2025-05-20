@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { IonHeader } from "@ionic/angular/standalone";
-import { MarcaVeiculo } from '../enum/marca-veiculo.enum';
-import { TipoVeiculo } from '../enum/tipo-veiculo.enum';
 import { VeiculosService } from '../services/veiculos.service';
+import { ActivatedRoute } from '@angular/router';
+import { MARCAS_VEICULO_LIST } from '../models/marca-veiculo.interface';
+import { TIPOS_VEICULO_LIST } from '../models/tipo-veiculo.interface';
 
 @Component({
     selector: 'app-veiculo-form',
@@ -16,10 +16,29 @@ import { VeiculosService } from '../services/veiculos.service';
     ]
 })
 export class VeiculoFormComponent implements OnInit {
-    marcas = Object.values(MarcaVeiculo);
-    tipos = Object.values(TipoVeiculo)
+    marcas = MARCAS_VEICULO_LIST;
+    tipos = TIPOS_VEICULO_LIST;
+    veiculoId!: number;
     
-    constructor(private readonly veiculosService: VeiculosService) { }
+    constructor(private readonly veiculosService: VeiculosService,
+        private readonly activatedRoute: ActivatedRoute,
+    ) { 
+        this.veiculoId = this.activatedRoute.snapshot.params['id'];
+        
+        if (this.veiculoId) {
+            this.veiculosService.getById(this.veiculoId).subscribe({
+                next: (resp) => {
+                    const marcaObj = this.marcas.find(marca => marca.id === resp.marca.id);
+                    const tipoObj = this.tipos.find(tipo => tipo.id === resp.tipo.id);
+                    this.veiculoForm.patchValue({...resp, marca: marcaObj, tipo: tipoObj});
+                }
+                , error: (error) => {
+                    alert('Erro ao buscar veículo!');
+                    console.error(error);
+                }
+            });
+        }
+    }
 
     onSubmit() {
         this.veiculosService.save(this.veiculoForm.value).subscribe({

@@ -33,6 +33,7 @@ export class VeiculosPage implements ViewWillEnter {
         console.log('caiu aqui');
         this.veiculosService.getAll().subscribe({
             next: (resp) => {
+                console.log(resp);
                 this.veiculos = resp;
             },
             error: (error) => {

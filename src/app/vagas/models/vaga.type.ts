@@ -1,5 +1,5 @@
 export type Vaga = {
-    id?: number,
+    id?: string,
     codigo: string,
     coberta: boolean
 }

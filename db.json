@@ -1,41 +1,41 @@
 {
   "veiculos": [
     {
-      "id": "1",
-      "modelo": "Pulse",
-      "marca": "FIAT",
-      "tipo": "SUV",
-      "placa": "JAH0F43",
-      "nomeProprietario": "José Alves",
-      "contatoProprietario": "48 99955-0154"
-    },
-    {
-      "id": "4d06",
-      "modelo": "DALE",
-      "marca": "Renault",
-      "tipo": "Hatch",
-      "placa": "ADSDFKD",
+      "id": "9812",
+      "modelo": "Dale",
+      "marca": {
+        "id": 7,
+        "nome": "Toyota"
+      },
+      "tipo": {
+        "id": 2,
+        "nome": "Sedan"
+      },
+      "placa": "UJD9876",
       "cor": "Preto",
-      "nomeProprietario": "Duda",
-      "contatoProprietario": "4898s545498"
-    },
-    {
-      "id": "a2f0",
-      "modelo": "Corsa",
-      "marca": "Renault",
-      "tipo": "Sedan",
-      "placa": "RJH9D9D",
-      "cor": "Preto",
-      "nomeProprietario": "Dale",
-      "contatoProprietario": "Dale"
+      "nomeProprietario": "Pretinho",
+      "contatoProprietario": "66 753526784"
     }
   ],
   "vagas": [
     {
-      "id": "1",
-      "codigo": "1",
-      "coberta": false,
-      "ativa": true
+      "id": "4e06",
+      "codigo": "74",
+      "coberta": true
+    },
+    {
+      "id": "123",
+      "codigo": "71",
+      "coberta": true
+    }
+  ],
+  "vagasOcupadas": [
+    {
+      "id": "6729",
+      "veiculoId": "9812",
+      "vagaId": "4e06",
+      "horaInicio": "2025-05-20T21:15:00",
+      "precoHora": 8
     }
   ]
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
                 loadChildren: () => import('../veiculos/carros.module').then(m => m.VeiculosPageModule)
             },
             {
+                path: 'estacionamento',
+                loadChildren: () => import('../estacionamento/estacionamento.module').then(m => m.EstacionamentoPageModule) 
+            },
+            {
                 path: '',
                 redirectTo: '/tabs/home',
                 pathMatch: 'full'
