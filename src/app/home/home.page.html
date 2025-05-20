@@ -29,10 +29,23 @@
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-title>Total vagas ocupadas</ion-title>
-            <circle-progress [percent]="this.vagasOcupadasPercentage" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-                [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
-                [animationDuration]="300" ></circle-progress>
+            <h1 style="margin-left: 0.75rem;">Ocupação</h1>
         </ion-row>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="large">
+                <circle-progress [percent]="this.getPorcentagemOcupada()" [radius]="100" [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+                    [animation]="true" [animationDuration]="300"></circle-progress>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h1 style="margin-left: 0.75rem;">
+                Total Faturado: {{ this.getTotalFaturadoHoje() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+            </h1>
+        </ion-row>
+        <!-- <br>
+        <ion-row>
+            <h1>Total faturado hoje: {{ this.getTotalFaturadoHoje() }}</h1>
+        </ion-row> -->
     </ion-grid>
 </ion-content>

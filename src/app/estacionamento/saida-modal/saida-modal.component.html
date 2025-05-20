@@ -13,7 +13,8 @@
                 <ion-label>
                     Vaga: {{ vagaOcupada.vaga.codigo }}<br>
                     Veículo: {{ vagaOcupada.veiculo.placa }} <br>
-                    Hora Entrada: {{ vagaOcupada.horaInicio | date:'dd/MM HH:mm' }}
+                    Hora Entrada: {{ vagaOcupada.horaInicio | date:'dd/MM HH:mm' }} <br>
+                    Total a pagar: R$ {{ calculaTotal(vagaOcupada)}}
                 </ion-label>
                 <ion-button fill="clear" color="danger" slot="end" (click)="this.finalizarVaga(vagaOcupada)">
                     <ion-icon name="close"></ion-icon>

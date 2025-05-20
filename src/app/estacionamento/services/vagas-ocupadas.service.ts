@@ -10,6 +10,8 @@ import { VagasService } from "src/app/vagas/services/vagas.service";
 })
 export class VagasOcupadasService {
     private readonly API_URL = BASE_API_URL + "/vagasOcupadas";
+    public totalFaturado: number = 0.0;
+    public porcentagemOcupada: number = 0.0;
 
     constructor(private readonly httpClient: HttpClient) {
 
@@ -31,5 +33,17 @@ export class VagasOcupadasService {
         console.log('caiu aq');
         console.log(vagaOcupadaId);
         return this.httpClient.delete<VagaOcupada>(`${this.API_URL}/${vagaOcupadaId}`);
+    }
+
+    calcularHorasInteiras(vagaOcupada: VagaOcupada): number {
+        const inicio = new Date(vagaOcupada.horaInicio).getTime();
+        const agora = Date.now();
+        let diffMs = agora - inicio;
+        let diffHoras = diffMs / (1000 * 60 * 60);
+
+        if (diffHoras < 1) {
+            return 1;
+        }
+        return Math.ceil(diffHoras);
     }
 }

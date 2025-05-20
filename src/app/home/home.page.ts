@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ViewDidEnter, ViewWillEnter } from '@ionic/angular';
 import { SaidaModalComponent } from '../estacionamento/saida-modal/saida-modal.component';
 import { VagasOcupadasService } from '../estacionamento/services/vagas-ocupadas.service';
 import { firstValueFrom } from 'rxjs';
@@ -54,4 +54,12 @@ export class HomePage implements OnInit {
         }
     }
 
+    getTotalFaturadoHoje() {
+        return this.vagasOcupadasService.totalFaturado;
+    }
+
+    getPorcentagemOcupada() {
+        return this.vagasService.vagasOcupadasPorcentagem;
+    }
+    
 }

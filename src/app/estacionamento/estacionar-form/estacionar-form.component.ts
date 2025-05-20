@@ -59,6 +59,7 @@ export class EstacionarFormComponent implements OnInit {
                 next: (resp) => {
                     alert('Carro estacionado com sucesso!');
                     this.estacionarForm.reset();
+                    this.vagasService.calculaPorcentagemVagas();
                     this.router.navigate(['/']);
                 },
                 error: (error) => {

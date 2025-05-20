@@ -14,7 +14,7 @@ import { VagasOcupadasService } from './services/vagas-ocupadas.service';
 export class EstacionamentoPage implements OnInit {
     pageTitle: string = 'Estacionamento';
     vagasOcupadas: VagaOcupada[] = [];
-    
+
     constructor(private readonly vagasOcupadasService: VagasOcupadasService) { }
 
     ngOnInit() {
@@ -23,7 +23,7 @@ export class EstacionamentoPage implements OnInit {
                 next: (resp) => {
                     this.vagasOcupadas = resp;
                 },
-                error: (error) =>{
+                error: (error) => {
                     alert('Erro ao buscar as vagas ocupadas');
                 }
             })
