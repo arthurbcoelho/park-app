@@ -18,7 +18,7 @@ export class VagaFormComponent implements OnInit {
 
     constructor(private readonly vagasService: VagasService,
         private readonly activatedRoute: ActivatedRoute,
-        private readonly router: Router
+        private readonly router: Router,
     ) {
         this.vagaId = this.activatedRoute.snapshot.params['id'];
 
@@ -38,7 +38,7 @@ export class VagaFormComponent implements OnInit {
     vagaForm: FormGroup = new FormGroup({
         codigo: new FormControl('', Validators.required),
         coberta: new FormControl(false, Validators.required),
-        comporataCamionete: new FormControl(true, Validators.required),
+        comportaCamionete: new FormControl(true, Validators.required),
         isAtiva: new FormControl(true, Validators.required),
         reservada: new FormControl(false, Validators.required)
     });
@@ -47,6 +47,7 @@ export class VagaFormComponent implements OnInit {
         this.vagasService.save(this.vagaForm.value).subscribe({
             next: (resp) => {
                 alert('Vaga cadastrada com sucesso!');
+                this.router.navigate(['/']);
                 this.vagaForm.reset();
             }
             , error: (error) => {

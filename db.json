@@ -43,6 +43,14 @@
       "id": "5c21",
       "codigo": "71",
       "coberta": true
+    },
+    {
+      "id": "0d04",
+      "codigo": "78",
+      "coberta": true,
+      "comporataCamionete": true,
+      "isAtiva": false,
+      "reservada": true
     }
   ],
   "vagasOcupadas": [
@@ -357,6 +365,92 @@
       "precoFixo": "",
       "horaFim": "2025-05-20T22:25:58.869Z",
       "finalizada": true
+    },
+    {
+      "id": "67bb",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "0d04",
+        "codigo": "78",
+        "coberta": true,
+        "comporataCamionete": true,
+        "isAtiva": false,
+        "reservada": true
+      },
+      "horaInicio": "2025-05-20T19:45:00",
+      "precoHora": "",
+      "precoFixo": 50
+    },
+    {
+      "id": "e0a1",
+      "veiculo": {
+        "id": "dd67",
+        "modelo": "Civic",
+        "marca": {
+          "id": 6,
+          "nome": "Honda"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UHA8865",
+        "cor": "Preto",
+        "nomeProprietario": "José Alves",
+        "contatoProprietario": "48 754265426"
+      },
+      "vaga": {
+        "id": "5c21",
+        "codigo": "71",
+        "coberta": true
+      },
+      "horaInicio": "2025-05-20T19:45:00",
+      "precoHora": 5,
+      "precoFixo": "",
+      "horaFim": "2025-05-20T22:49:02.140Z",
+      "finalizada": true
+    },
+    {
+      "id": "d070",
+      "veiculo": {
+        "id": "0843",
+        "modelo": "Dale",
+        "marca": {
+          "id": 7,
+          "nome": "Toyota"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "UJD9876",
+        "cor": "Preto",
+        "nomeProprietario": "Pretinho",
+        "contatoProprietario": "66 753526784"
+      },
+      "vaga": {
+        "id": "e4e7",
+        "codigo": "85",
+        "coberta": false
+      },
+      "horaInicio": "2025-05-20T19:45:00",
+      "precoHora": "",
+      "precoFixo": 17
     }
   ]
 }

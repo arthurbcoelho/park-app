@@ -28,4 +28,16 @@ export class EstacionamentoPage implements OnInit {
                 }
             })
     }
+
+    atualizarVagas() {
+                this.vagasOcupadasService.getAll()
+            .subscribe({
+                next: (resp) => {
+                    this.vagasOcupadas = resp;
+                },
+                error: (error) => {
+                    alert('Erro ao buscar as vagas ocupadas');
+                }
+            })
+    }
 }
