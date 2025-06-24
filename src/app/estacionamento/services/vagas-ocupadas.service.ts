@@ -9,7 +9,7 @@ import { VagasService } from "src/app/vagas/services/vagas.service";
     providedIn: 'root'
 })
 export class VagasOcupadasService {
-    private readonly API_URL = BASE_API_URL + "/vagasOcupadas";
+    private readonly API_URL = BASE_API_URL + "/vagas-ocupadas";
     public totalFaturado: number = 0.0;
     public porcentagemOcupada: number = 0.0;
 
@@ -30,7 +30,6 @@ export class VagasOcupadasService {
     }
 
     delete(vagaOcupadaId: string) {
-        console.log('caiu aq');
         console.log(vagaOcupadaId);
         return this.httpClient.delete<VagaOcupada>(`${this.API_URL}/${vagaOcupadaId}`);
     }

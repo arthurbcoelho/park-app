@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
         <ion-toolbar>
-            <ion-title size="large">{{ this.pageName }}</ion-title>
+            <ion-title size="large">{{ pageName }}</ion-title>
         </ion-toolbar>
     </ion-header>
 
@@ -17,11 +17,11 @@
         <ion-list-header>
             Lista de veículos
         </ion-list-header>
-        @for(veiculo of this.veiculos; track veiculo.id) {
+        @for(veiculo of veiculos; track veiculo.id) {
             <ion-item>
                 <ion-text>
                     <h2>{{ veiculo.placa }}</h2>
-                    <h3>{{ veiculo.marca.nome }} - {{ veiculo.modelo }}</h3>
+                    <h3>{{ veiculo.marca?.nome }} - {{ veiculo.modelo }}</h3>
 
                 </ion-text>
                 <ion-button size="small" [routerLink]="['edit', veiculo.id]" slot="end">
