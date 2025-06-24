@@ -31,6 +31,22 @@
       "cor": "Preto",
       "nomeProprietario": "José Alves",
       "contatoProprietario": "48 754265426"
+    },
+    {
+      "id": "b687",
+      "modelo": "fiat",
+      "marca": {
+        "id": 3,
+        "nome": "Chevrolet"
+      },
+      "tipo": {
+        "id": 2,
+        "nome": "Sedan"
+      },
+      "placa": "612mes",
+      "cor": "vermelho",
+      "nomeProprietario": "roger",
+      "contatoProprietario": "9000000000"
     }
   ],
   "vagas": [
@@ -450,7 +466,36 @@
       },
       "horaInicio": "2025-05-20T19:45:00",
       "precoHora": "",
-      "precoFixo": 17
+      "precoFixo": 17,
+      "horaFim": "2025-05-20T23:55:27.620Z",
+      "finalizada": true
+    },
+    {
+      "id": "b6f2",
+      "veiculo": {
+        "id": "b687",
+        "modelo": "fiat",
+        "marca": {
+          "id": 3,
+          "nome": "Chevrolet"
+        },
+        "tipo": {
+          "id": 2,
+          "nome": "Sedan"
+        },
+        "placa": "612mes",
+        "cor": "vermelho",
+        "nomeProprietario": "roger",
+        "contatoProprietario": "9000000000"
+      },
+      "vaga": {
+        "id": "5c21",
+        "codigo": "71",
+        "coberta": true
+      },
+      "horaInicio": "2025-05-20T20:45:00",
+      "precoHora": "",
+      "precoFixo": 10
     }
   ]
 }
